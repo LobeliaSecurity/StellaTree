@@ -1,0 +1,2 @@
+# StellaTree
+Experimental NoSQL database
