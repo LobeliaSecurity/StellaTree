@@ -1,3 +1,4 @@
+import inspect
 import StellaTree
 import uuid
 
@@ -67,13 +68,15 @@ stellaTree.Glue(
             print("Hello, I'm %s" % R["name"])
     """)
 
+
+def F(P):
+    print(f"Hello, {P}.")
+
+
 stellaTree.Glue(
     "@StellaTreeTest@N'th@World",
     "If not defined any function in Tree. Could set any data.",
-    extend=r"""
-        def F(P):
-            print("Hello, %s." % P)
-    """)
+    extend=inspect.getsource(F))
 
 loadData = stellaTree.LoadDataLib("@StellaTreeTest@N'th@Character&Eve&Alcott;")
 
